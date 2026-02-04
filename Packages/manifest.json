@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.unity.ai.navigation": "file:C:/Users/user/Documents/Navigation Ai/com.unity.ai.navigation-master",
     "com.unity.feature.development": "1.0.2",
     "com.unity.inputsystem": "1.16.0",
     "com.unity.learn.iet-framework": "5.0.2",
