@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b7b5809501b54a4192277236edcaf88, type: 3}
   m_Name: ARCoreRuntimeSettings
   m_EditorClassIdentifier: 
-  m_EnableCloudAnchors: 0
+  m_EnableCloudAnchors: 1
   m_AuthorizationType: 0
-  m_ApiKey: 
+  m_ApiKey: AIzaSyB4fVF7qLlhatsZe_OfxsWl-X2VAAdf4a0

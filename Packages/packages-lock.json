@@ -1,5 +1,15 @@
 {
   "dependencies": {
+    "com.google.ar.core.arfoundation.extensions": {
+      "version": "file:C:/Users/user/Documents/arcore-unity-extensions-main",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.xr.arfoundation": "4.1.5",
+        "com.unity.xr.arcore": "4.1.5",
+        "com.unity.xr.arkit": "4.1.5"
+      }
+    },
     "com.unity.ai.navigation": {
       "version": "file:C:/Users/user/Documents/Navigation Ai/com.unity.ai.navigation-master",
       "depth": 0,
