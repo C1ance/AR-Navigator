@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.google.ar.core.arfoundation.extensions": "file:C:/Users/user/Documents/arcore-unity-extensions-main",
+    "com.unity.2d.sprite": "1.0.0",
     "com.unity.ai.navigation": "file:C:/Users/user/Documents/Navigation Ai/com.unity.ai.navigation-master",
     "com.unity.feature.development": "1.0.2",
     "com.unity.inputsystem": "1.16.0",
