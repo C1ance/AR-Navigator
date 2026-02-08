@@ -4,14 +4,23 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
-using TMPro;        
+using TMPro;
+
+[System.Serializable]
+public class RoomData
+{
+    public Transform roomPoint; 
+    public string russianName; 
+}
 
 public class UniversalARNavigator : MonoBehaviour
 {
+    [Header("Точки комнат и названия")]
+    public List<RoomData> roomList;
+
     [Header("Навигация")]
     public NavMeshAgent agent;
     public LineRenderer pathLine;
-    public List<Transform> roomPoints;
     public Transform mapHolder;
 
     [Header("UI Панели")]
@@ -37,16 +46,17 @@ public class UniversalARNavigator : MonoBehaviour
     public void GenerateRoomButtons()
     {
 
+
         foreach (Transform child in buttonsContainer)
         {
-
             if (child.gameObject != buttonTemplate.gameObject)
             {
                 Destroy(child.gameObject);
             }
         }
 
-        for (int i = 0; i < roomPoints.Count; i++)
+
+        for (int i = 0; i < roomList.Count; i++)
         {
             Button newButton = Instantiate(buttonTemplate, buttonsContainer);
             newButton.gameObject.SetActive(true);
@@ -55,13 +65,13 @@ public class UniversalARNavigator : MonoBehaviour
             TextMeshProUGUI buttonText = newButton.GetComponentInChildren<TextMeshProUGUI>();
             if (buttonText != null)
             {
-                buttonText.text = roomPoints[i].name;
+                buttonText.text = roomList[i].russianName; 
             }
 
+  
             int index = i;
             newButton.onClick.AddListener(() => SelectRoom(index));
         }
-
 
         selectionPanel.SetActive(true);
     }
@@ -82,10 +92,10 @@ public class UniversalARNavigator : MonoBehaviour
 
     public void SelectRoom(int index)
     {
-        if (index < 0 || index >= roomPoints.Count) return;
+        if (index < 0 || index >= roomList.Count) return; 
 
         selectionPanel.SetActive(false);
-        agent.SetDestination(roomPoints[index].position);
+        agent.SetDestination(roomList[index].roomPoint.position); 
         pathLine.enabled = true;
         isNavigating = true;
 
