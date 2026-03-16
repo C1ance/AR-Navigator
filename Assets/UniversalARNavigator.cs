@@ -78,15 +78,18 @@ public class UniversalARNavigator : MonoBehaviour
 
 
 
+    [Header("Привязка")]
+    public Transform virtualEntrance; 
+
     public void CalibrateAndStart()
     {
-        mapHolder.position = transform.position;
         Vector3 forward = transform.forward;
         forward.y = 0;
         mapHolder.rotation = Quaternion.LookRotation(forward);
-
+        Vector3 offset = mapHolder.position - virtualEntrance.position;
+        mapHolder.position = transform.position + offset;
         calibrationPanel.SetActive(false);
-        GenerateRoomButtons(); 
+        GenerateRoomButtons();
     }
 
 
