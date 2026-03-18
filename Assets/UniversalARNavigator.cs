@@ -85,7 +85,7 @@ public class UniversalARNavigator : MonoBehaviour
     {
         Vector3 forward = transform.forward;
         forward.y = 0;
-        mapHolder.rotation = Quaternion.LookRotation(forward);
+        mapHolder.rotation = Quaternion.LookRotation(forward) * Quaternion.Euler(0, 180, 0);
         Vector3 offset = mapHolder.position - virtualEntrance.position;
         mapHolder.position = transform.position + offset;
         calibrationPanel.SetActive(false);
